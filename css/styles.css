@@ -187,7 +187,10 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
-
+/* Boton seleccionar */
+.select{
+  border-radius: 20px;
+}
 /* Formulario */
 .loginb {
   display: block;
@@ -241,6 +244,32 @@ nav ul li a:hover  {
   color: #F09100 !important;
   transform: scale(1.2, 1.2);
 }
+.nav-item:hover ul {
+  display: block;
+}
+
+.nav-item ul {
+  display: none;
+  position: absolute;
+  background-color: #212529;
+  padding-bottom: 15px;
+  list-style: none;
+  z-index: 1; 
+  width: 411px;
+  border-radius: 5px;
+  
+}
+.nav-item ul li {
+  margin-bottom: 5px;
+}
+.nav-item ul li a {
+  color: #fff; 
+  text-decoration: none;
+}
+.nav-item ul li a:hover {
+  background-color: #333;
+}
+
 
 /* Estilos Categorias */ 
 #muebles:hover{
@@ -346,7 +375,7 @@ justify-content: center;
 
 .imagenesgas {
   margin: 50px;
-  border: 1px solid #ccc;
+  
   
  
 }
@@ -400,4 +429,312 @@ justify-content: center;
 
 .btnComentarios{
   background-color: #F09100;
+}
+
+#ContenidoProductosRelacionados{
+  margin-bottom: 100px;
+}
+
+.imagenRela{
+  height: 150px;
+  justify-content: space-around;
+  align-items: center;
+}
+.imagenRela:hover{
+  transition: all 100ms;
+  height: 180px;
+}
+
+#ContenidoProductosRelacionados{
+  width: 90%;
+  display: flex;
+}
+
+#ContenidoProductosRelacionados > img{
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.bi-sun-fill {
+  color: yellow;
+}
+
+.bi-moon-fill {
+  color: #0087F7;
+}
+
+.rounded-fill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+}
+
+/* Estilos para el tema oscuro */
+[data-bs-theme="dark"] {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Estilos para todos los enlaces en el tema oscuro */
+[data-bs-theme="dark"] a {
+  color: #fff;
+}
+
+/* Estilos para todos los elementos de formulario (inputs y campos de texto) en el tema oscuro */
+[data-bs-theme="dark"] input,
+[data-bs-theme="dark"] textarea {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+/* Estilos para los botones en el tema oscuro */
+[data-bs-theme="dark"] .btn {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Estilos para los comentarios y calificaciones en el tema oscuro */
+
+[data-bs-theme="dark"] #comments .list-group-item p {
+  background-color: #111;
+  color: #fff;
+  border: none;
+}
+
+[data-bs-theme="dark"] #comments .comments-products-theme-black {
+  background-color: black !important;
+}
+
+/* Estilos para la parte de comentar en el tema oscuro */
+[data-bs-theme="dark"] .form-group {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Estilos para el botón de envío en el tema oscuro */
+[data-bs-theme="dark"] #botonEnvio {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Estilos para elementos div en el tema oscuro */
+[data-bs-theme="dark"] div {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Estilos para elementos select en el tema oscuro */
+[data-bs-theme="dark"] select {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+/* Estilos para elementos ul en el tema oscuro */
+[data-bs-theme="dark"] ul li {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+/* Estilos del nav en tema oscuro */
+[data-bs-theme="dark"] .nav-item {
+  background-color: #333; 
+}
+
+[data-bs-theme="dark"] nav {
+  background-color: #333 !important;
+}
+
+[data-bs-theme="dark"] .navbar-nav {
+  background-color: #333;
+}
+
+[data-bs-theme="dark"] .container-nav {
+  background-color: #333;
+}
+
+[data-bs-theme="dark"] .ulchico {
+  background-color: #333;
+}
+
+[data-bs-theme="dark"] .lichico {
+  background-color: #333;
+}
+
+
+[data-bs-theme="dark"] .carousel-indicators {
+  background-color: rgba(0, 0, 0, 0%);
+}
+
+ /* Estilos del footer en tema oscuro*/
+ [data-bs-theme="dark"] .container-foot {
+  background-color: #212529;
+}
+
+[data-bs-theme="dark"] #rangeFilterCount {
+  border: none;
+}
+
+[data-bs-theme="dark"] .dz-clickable {
+  background-color: #333333 !important;
+}
+
+[data-bs-theme="dark"] .needsclick {
+  background-color: #333333 !important;
+}
+/* Estrella */
+[data-bs-theme="dark"] .estrellita:hover {
+  background-color: #F09100;
+  color: #fff;
+}
+[data-bs-theme="dark"] .estrellitas{
+  color: #F09100;
+  text-align: center;
+}
+[data-bs-theme="dark"] .imgCompleta{
+  color: #F09100;
+}
+[data-bs-theme="dark"] .imgNoCompleta{
+  color: #F09100;
+}
+
+[data-bs-theme="dark"] .claseEstrella{
+  background-color: #F09100;
+}
+[data-bs-theme="dark"] #estrellita1:hover{
+  background-color: #F09100;
+}
+[data-bs-theme="dark"] #estrellita2:hover{
+  background-color: #F09100;
+}
+[data-bs-theme="dark"] #estrellita3:hover{
+  background-color: #F09100;
+}
+[data-bs-theme="dark"] #estrellita4:hover{
+  background-color: #F09100;
+}
+[data-bs-theme="dark"] #estrellita5:hover{
+  background-color: #F09100;
+}
+
+
+
+[data-bs-theme="dark"] .claseEstrellaWhite{
+  background-color: #333333;
+}
+
+[data-bs-theme="dark"] #idcat1{
+  background-color: #333333;
+  border-radius: 10px 0px 0px 10px;
+}
+[data-bs-theme="dark"] .contenedorCat{
+  
+  margin: 0px;
+  padding: 0px;
+}
+[data-bs-theme="dark"] .cursor-active{
+  background-color: #585757;
+  margin: 3px;
+  padding: 0px;
+}
+
+[data-bs-theme="dark"] #contenedorCat:hover{
+  
+  margin: 0px;
+  padding: 0px;
+}
+
+
+
+[data-bs-theme="dark"] .cursor-active:hover{
+  background-color: #333333;
+  border-radius: 20px;
+}
+[data-bs-theme="dark"] #colorfondocat{
+  background-color: #333333;
+  border: 1px solid #333333 ;
+}
+
+[data-bs-theme="dark"] #idcat2{
+  background-color: #333333;
+  border-radius:0px 10px 10px 0px;
+}
+.ulchico{
+  width: 285px !important;
+}
+.luna{
+  margin: 5px 10px 0px 10px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botin{
+  border: none;
+  background-color: white;
+}
+
+[data-bs-theme="dark"] .cardproduct{
+  background-color: #333333;
+  border: none;
+  border-radius: none;
+}
+[data-bs-theme="dark"] .cardproduct1{
+  background-color: #585757;
+}
+[data-bs-theme="dark"] .cardproduct1:hover{
+  background-color: #858383;
+}
+
+[data-bs-theme="dark"] .album{
+  background-color: black;
+}
+[data-bs-theme="dark"] .ulchico > li{
+  background-color: #333333;
+}
+.container{
+  padding: 0px;
+
+
+}
+
+[data-bs-theme="dark"] .container{
+  padding: 0px;  
+}
+
+[data-bs-theme="dark"] .muchomas{
+  border: none;
+  background-color: #585757;;
+}
+[data-bs-theme="dark"] #dataCont {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+[data-bs-theme="dark"] .parrafoAbajo {
+  opacity: 1;
+  background-color: #212529;
+}
+[data-bs-theme="dark"] body{
+  opacity: 1 !important;
+  background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+[data-bs-theme="dark"] .jumbotron {
+  
+  background-color: #53C0FB;
+  background: url('../img/image_cover_dark.png');
+  opacity: 1 !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+[data-bs-theme="dark"]  .container-foot{
+  background-color: #212529;
 }

@@ -33,16 +33,16 @@ function showProductsList(array) {
     for (let i = 0; i < array.length; i++) {
         let product = array[i];
         htmlContentToAppend += `
-            <div class="product-card">
-                <div class="img">
+            <div class="product-card cardproduct">
+                <div class="img cardproduct">
                     <img src="${product.image}" alt="product image">
                 </div>
-                <div class="info">
+                <div class="info cardproduct">
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>
                     <p>Precio: ${product.cost} ${product.currency}</p>
                     <p>Vendidos: ${product.soldCount}</p>
-                    <button onclick="selectProduct(${product.id})">Seleccionar</button>
+                    <button class="select cardproduct1" onclick="selectProduct(${product.id})">Seleccionar</button>
                 </div>
             </div>`;
     }
