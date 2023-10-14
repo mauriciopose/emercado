@@ -67,8 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
     variableeste = 5;
   });
 
-  const PRODUCT_INFO_URL = "https://japceibal.github.io/emercado-api/products/";
+  
 
+
+  const PRODUCT_INFO_URL = "https://japceibal.github.io/emercado-api/products/";
+  
+ 
   const numeroProd = localStorage.getItem("selectedProduct");
   const content = PRODUCT_INFO_URL + numeroProd + ".json";
   console.log(content);
@@ -76,11 +80,16 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch(content)
     .then((response) => response.json())
     .then(
-      (data) =>
-        (contenidoDePag.innerHTML = `
+      (data) =>{
+        
+        (
+          contenidoDePag.innerHTML = `
                 
-        <div>
-        <h1 class="contenedor1" id="ubicar">${data.name}</h1>
+        <div >
+        <div class="contenedorCarritoTitle">
+        <h1 class="contenedor1" id="ubicar">${data.name}</h1><button id="agregarCarrito">Agregar Carrito</button>
+        </div>
+        
         <hr />
                 
         <p class="cat1">Precio:<p>${data.currency} ${data.cost}</p>
@@ -120,9 +129,24 @@ document.addEventListener("DOMContentLoaded", () => {
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-        `)
-    );
+        `
+        )
+      
+        const carrito = document.getElementById("agregarCarrito")
+        carrito.addEventListener("click", ()=>{
+            alert("Producto Seleccionado!!")
+          let arrayActual = JSON.parse(localStorage.getItem('carrito')) || [];
+            var nuevoElemento = data;
+            arrayActual.push(nuevoElemento);
 
+            localStorage.setItem('carrito', JSON.stringify(arrayActual));
+            
+            console.log('Array actualizado en localStorage:', arrayActual);
+        })
+      }
+        );
+        
+        
   function calificacion(score) {
     if (score == "5") {
       return `

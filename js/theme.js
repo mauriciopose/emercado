@@ -24,7 +24,7 @@ const cambiarTema = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  const modoPreferido = localStorage.getItem("modoPreferido");
+  const modoPreferido = localStorage.getItem("modoPreferido"); // Obtiene el modo preferido
   if (modoPreferido === "oscuro") {
     temaOscuro();
   } else {
