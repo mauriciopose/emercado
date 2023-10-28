@@ -928,3 +928,27 @@ thead tr th{
 .res{
   font-weight: bold;
 }
+#containerCostos{
+  margin-left: 15%; 
+  margin-right: 15%; 
+  border: 1px solid rgb(151, 151, 151);
+  border-radius: 5px;
+}
+#centrarh5{
+margin-top: 5px;
+margin-bottom: 5px;
+
+}
+#clearfix{
+  padding-bottom: 50px;
+}
+input[type="button"] {
+  margin-left: 25%;
+  width: 50%;
+  height: 50px;
+  color: white;
+  background-color: #0D6EFD;
+  border-color: #0D6EFD;
+  border-radius: 5px;
+
+}
