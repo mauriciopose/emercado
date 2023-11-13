@@ -94,7 +94,9 @@ function eliminarDelCarrito(id) {
 let carrito = JSON.parse (localStorage.getItem("carrito"));
 document.addEventListener("DOMContentLoaded", () => {
   const carritoCont = document.getElementById("lista");
- 
+  let contenidoIndex = localStorage.getItem("EmailPersona");
+  let emailPersona = document.getElementById("emailPersona");
+  emailPersona.innerHTML = `Perfil: ${contenidoIndex}`;
   
   const URL = "https://japceibal.github.io/emercado-api/user_cart/25801.json";
   ////
