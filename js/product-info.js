@@ -70,19 +70,21 @@ document.addEventListener("DOMContentLoaded", () => {
   
 
 
-  const PRODUCT_INFO_URL = "https://japceibal.github.io/emercado-api/products/";
+
+  const PRODUCT_INFO_URL1 = "http://localhost:3000/products/";
   
- 
+  
+ console.log(PRODUCT_INFO_URL)
+ console.log(PRODUCT_INFO_URL1)
   const numeroProd = localStorage.getItem("selectedProduct");
-  const content = PRODUCT_INFO_URL + numeroProd + ".json";
+  const content = PRODUCT_INFO_URL1 + numeroProd + ".json"
   console.log(content);
   var contenidoDePag = document.getElementById("contenidoDePag");
   fetch(content)
     .then((response) => response.json())
     .then(
       (data) =>{
-        
-        (
+          ( 
           contenidoDePag.innerHTML = `
                 
         <div >
@@ -97,7 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <p class="cat1">Categoría:</p><p>${data.category}</p>
         <p class="cat1">Cantidad vendidos:</p><p>${data.soldCount}</p>
         <p class="cat1">Imágenes: </p>
-
 
         <div id="carousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -130,23 +131,49 @@ document.addEventListener("DOMContentLoaded", () => {
         </button>
       </div>
         `
-        )
-      
-        const carrito = document.getElementById("agregarCarrito")
-        carrito.addEventListener("click", ()=>{
-            alert("Producto Seleccionado!!")
-          let arrayActual = JSON.parse(localStorage.getItem('carrito')) || [];
-            var nuevoElemento = data;
-            arrayActual.push(nuevoElemento);
 
-            localStorage.setItem('carrito', JSON.stringify(arrayActual));
+        )
+        const URL = "http://localhost:3000/usercart"
+        
+          let carrito = document.getElementById("agregarCarrito");
+          carrito.addEventListener("click", ()=>{
             
-            console.log('Array actualizado en localStorage:', arrayActual);
-        })
-      }
-        );
+            const data1 = {
+              id: Date.now(),
+              name: data.name,
+              count: data.soldCount,
+              unitCost: data.cost,
+              currency: data.currency,
+              image: data.images[0]
+            }
+            console.log(JSON.stringify(data1))
+          
+            fetch(URL, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(data1)
+            })
+              .then(response => {
+                // Verifica si la respuesta de la solicitud es exitosa (código de estado 2xx)
+                if (!response.ok) {
+                  throw new Error('La solicitud no fue exitosa');
+                }
+                // Parsea la respuesta como JSON
+                return response.json();
+              })
+              .then(data => {
+                // Maneja los datos obtenidos de la respuesta
+                console.log('Datos agregados:', data1);
+              })
+              .catch(error => {
+                // Captura y maneja cualquier error que ocurra durante la solicitud
+                console.error('Hubo un problema con la solicitud:', error);
+              });
+            })
         
-        
+})
   function calificacion(score) {
     if (score == "5") {
       return `
@@ -196,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return "Puntuación no válida";
   }
 
-  let comments = PRODUCT_INFO_COMMENTS_URL + numeroProd + ".json";
+  let comments =  PRODUCT_INFO_COMMENTS_URL + "/" + numeroProd + ".json"
   let infocomentarios = document.querySelector("#comments");
   fetch(comments)
     .then((response) => response.json())
@@ -205,8 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="container"> 
           <h4>Comentarios</h4>
           <ul class="list-group" id="lista1">
-            ${data
-              .map(
+            ${data.map(
                 (comment) => `
               <li class="list-group-item">
                 <strong>${comment.user}</strong>
@@ -324,4 +350,4 @@ document.addEventListener("DOMContentLoaded", () => {
                                       
                                       
                                     });
-});
+})

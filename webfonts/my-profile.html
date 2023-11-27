@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <button onclick="cambiarTema()" class="btn  luna rounded-fill"><i id="dl-icon" class="bi bi-moon-fill"></i></button>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html"><span class="icon">U</span> <span id="emailPersona"></span></a>
+              <ul class="ulchico">
+                
+                <li class="lichico"><a href="cart.html">Carrito</a></li>
+                <li class="lichico"><a href="my-profile.html">Mi perfil</a></li>
+                <li class="lichico"><a href="login.html">Cerrar sesión</a></li>
+              </ul>
+            </li>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="container margenPers" >
+      <h1 id="perfilh1">Perfil</h1>
+      <div id="imagenContainer"><img id="previewImage" src="./img/perfil.png" alt="imagen"></div>
+      <hr>
+      <form id="formPerfil">
+      <label for="txtNombre" >Primer nombre*</label>
+      <input type="text" id="txtNombre" required class="form-control"><br>
+
+      <label for="txtApellido">Primer apellido*</label>
+      <input required type="text" id="txtApellido"><br>
+
+      <label for="txtEmail"> E-mail*</label>
+      <input required type="text" id="txtEmail"><br>
+
+      <label for="txtSegundoNombre">Segundo nombre</label>
+      <input  type="text" id="txtSegundoNombre"><br>
+
+      <label for="txtSegundoApellido">Segundo apellido</label>
+      <input  type="text" id="txtSegundoApellido"><br>
+
+      <label for="txtTelefono"> Telefono de contacto</label>
+      <input type="text" id="txtTelefono"><br>
+      <label for="imgPerfil">Imagen Perfil</label>
+    <input type="file" id="imgPerfil" onchange="mostrarImagen(imagenInput, imagenContainer)">
+   
+     
+      <hr>
+      <input type="button" value="Guardar Cambios" id="btnValidar" class="btn btn-success">
+    </form>
+    </div>
+    
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+    </div>
+  </footer>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script src="js/my-profile.js"></script>
+</body>
+
+</html>

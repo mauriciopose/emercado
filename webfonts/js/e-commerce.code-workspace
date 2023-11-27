@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "e-commerce",
+			"path": ".."
+		},
+		{
+			"name": "jsons",
+			"path": "../../../Lucia Repo/jsons"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5503,
+		"liveServer.settings.multiRootWorkspaceName": "e-commerce"
+	}
+}

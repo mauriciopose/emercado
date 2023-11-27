@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     let categoriaSeleccionadaId = localStorage.getItem("catID");
     if (categoriaSeleccionadaId !== null) {
-        let url = `https://japceibal.github.io/emercado-api/cats_products/${categoriaSeleccionadaId}.json`;
+        let url = `http://localhost:3000/cats_products/${categoriaSeleccionadaId}.json`;
 
         getJSONData(url).then(function (resultObj) {
             if (resultObj.status === "ok") {

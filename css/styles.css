@@ -886,6 +886,7 @@ input[type="text"]:focus {
 input[type="checkbox"] {
   margin-right: 10px;
 }
+
 button {
   background-color: #4caf50;
   color: white;
@@ -897,9 +898,6 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #45a049;
-}
 h4 {
   margin-bottom: 20px;
   font-size: 25px;
